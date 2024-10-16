@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translate</title>
+</head>
+<body>
+<input type="text" id="string">
+<button onclick="submit()">Dich</button>
+<p id="result"></p>
+<script>
+    function submit() {
+        let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
+        let arr_vn = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+        let string = document.getElementById('string').value;
+        let result = "";
+        let index_eng = 0;
+        for (let i = 0; i < arr_eng.length; i++) {
+            if(string === arr_eng[i]) {
+                index_eng = i;
+                for (let j = 0; j < arr_vn.length; j++) {
+                    if (index_eng === j) {
+                        result = arr_vn[j];
+                    }
+                }
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    }
+
+</script>
+</body>
+</html>
